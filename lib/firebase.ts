@@ -25,7 +25,9 @@ export const storage = firebase.storage();
 export const serverTimestamp = firebase.firestore.FieldValue.serverTimestamp;
 
 
-export function itemToJSON(doc: { data: () => any; }) {
+export function itemToJSON(doc: {
+  id: any; data: () => any; 
+}) {
   const data = doc.data();
   return {
     ...data,
