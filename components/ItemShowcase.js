@@ -58,11 +58,11 @@ function ItemCard({item}) {
             {((user && !chashcin) && !item.booked) && (
                 <button className="btn-green" onClick={BookItem}> Book</button>
             )}
-            {((user && !chashcin) && (item.booked && item.bookedBy.uid != user.uid)) && (
-                <strong className='push-left'>Booked by {item.bookedBy.name}</strong>
-            )}
             {((user && !chashcin) && (item.booked && item.bookedBy.uid == user.uid)) && (
                 <button className="btn-green" onClick={UnBookItem}> UnBook</button>
+            )}
+            {item.booked && (
+                <strong className='push-left'>Booked by {item.bookedBy.name}</strong>
             )}
         </div>
     )
